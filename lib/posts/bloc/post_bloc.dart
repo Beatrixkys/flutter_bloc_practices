@@ -14,6 +14,8 @@ part 'post_state.dart';
 const _postLimit = 20;
 const throttleDuration = Duration(milliseconds: 100);
 
+//customise how events are processed
+//this functions throttles the events if the duration is too long
 EventTransformer<E> throttleDroppable<E>(Duration duration) {
   return (events, mapper) {
     return droppable<E>().call(events.throttle(duration), mapper);
@@ -21,6 +23,7 @@ EventTransformer<E> throttleDroppable<E>(Duration duration) {
 }
 
 class PostBloc extends Bloc<PostEvent, PostState> {
+  //upon initial creation, use a httpClient to create a transformer
   PostBloc({required this.httpClient}) : super(const PostState()) {
     on<PostFetched>(
       _onPostFetched,

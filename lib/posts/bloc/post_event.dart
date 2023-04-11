@@ -5,4 +5,5 @@ abstract class PostEvent extends Equatable {
   List<Object> get props => [];
 }
 
+//only has one event which is post fetched
 class PostFetched extends PostEvent {}
