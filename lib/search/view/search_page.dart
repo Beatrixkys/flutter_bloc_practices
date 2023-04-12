@@ -40,6 +40,8 @@ class _SearchPageState extends State<SearchPage> {
               ),
             ),
           ),
+
+          //returns the string from the routing
           IconButton(
             key: const Key('searchPage_search_iconButton'),
             icon: const Icon(Icons.search, semanticLabel: 'Submit'),

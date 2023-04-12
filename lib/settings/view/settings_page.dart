@@ -30,6 +30,7 @@ class SettingsPage extends StatelessWidget {
                 subtitle: const Text(
                   'Use metric measurements for temperature units.',
                 ),
+                //use the weather cubit layer to toggle the state of temperature units
                 trailing: Switch(
                   value: state.temperatureUnits.isCelsius,
                   onChanged: (_) => context.read<WeatherCubit>().toggleUnits(),

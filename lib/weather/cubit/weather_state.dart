@@ -1,5 +1,6 @@
 part of 'weather_cubit.dart';
 
+//use an enum to show the status of the weather
 enum WeatherStatus { initial, loading, success, failure }
 
 extension WeatherStatusX on WeatherStatus {
